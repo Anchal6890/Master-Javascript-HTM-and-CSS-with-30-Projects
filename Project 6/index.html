@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .output {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>BMI Calculator</h1>
+  <div class="input-group">
+    <label for="age">Age:</label>
+    <input type="number" id="age" placeholder="Enter your age">
+  </div>
+  <div class="input-group">
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+  </div>
+  <div class="input-group">
+    <label for="height">Height (cm):</label>
+    <input type="range" id="height" min="100" max="250" value="170" oninput="updateHeight(this.value)">
+    <span id="heightValue">170 cm</span>
+  </div>
+  <div class="input-group">
+    <label for="weight">Weight (kg):</label>
+    <input type="range" id="weight" min="30" max="200" value="70" oninput="updateWeight(this.value)">
+    <span id="weightValue">70 kg</span>
+  </div>
+  <button onclick="calculateBMI()">Calculate BMI</button>
+  <div class="output">
+    Your BMI: <span id="bmiResult">0</span>
+  </div>
+
+  <script>
+    function updateHeight(value) {
+      document.getElementById('heightValue').innerText = `${value} cm`;
+    }
+
+    function updateWeight(value) {
+      document.getElementById('weightValue').innerText = `${value} kg`;
+    }
+
+    function calculateBMI() {
+      const height = document.getElementById('height').value / 100; // Convert to meters
+      const weight = document.getElementById('weight').value;
+      const bmi = (weight / (height * height)).toFixed(1);
+      document.getElementById('bmiResult').innerText = bmi;
+    }
+  </script>
+</body>
+</html>
