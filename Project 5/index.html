@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .color-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .direction-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .direction-buttons button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .generate-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        textarea {
+            width: 300px;
+            height: 100px;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="color-buttons">
+        <button style="background-color: pink; width: 50px; height: 50px; border: none; border-radius: 5px;"></button>
+        <button style="background-color: blue; width: 50px; height: 50px; border: none; border-radius: 5px;"></button>
+    </div>
+
+    <div class="direction-buttons">
+        <button>↑</button>
+        <button>↓</button>
+        <button>→</button>
+        <button>←</button>
+        <button>↑</button>
+        <button>↓</button>
+        <button>→</button>
+        <button>←</button>
+    </div>
+
+    <div class="generate-section">
+        <button>Generate</button>
+        <textarea></textarea>
+        <button>Copy</button>
+    </div>
+</body>
+</html>
